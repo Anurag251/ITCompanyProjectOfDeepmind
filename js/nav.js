@@ -1,10 +1,8 @@
-// nav dropdown
+// sticky-nav
+const sticky = document.querySelector('header');
 
-const dropDownBtn = document.querySelectorAll('.drop-down');
-const drop = document.querySelectorAll('.nav-sec .drop');
-
-dropDownBtn.forEach((btn, idx) => {
-  $(btn).hover(() => {
-    drop[idx].classList.toggle('active');
-  });
-});
+window.onscroll = () => {
+  this.scrollY > 180
+    ? sticky.classList.add('sticky')
+    : sticky.classList.remove('sticky');
+};

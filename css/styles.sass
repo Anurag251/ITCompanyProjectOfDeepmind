@@ -140,7 +140,15 @@ section
 /************************   header   ************************/ 
 
 header
+  z-index: 20
   background-color: $pri
+  @include trans()
+
+  &.sticky
+    position: sticky
+    top: 0
+    animation: sticky 1s ease-in-out
+
   .navbar
     @include flex($justify: space-between)
     padding: .5rem 0
@@ -160,6 +168,13 @@ header
 
           a
             color: $light
+
+@keyframes sticky
+  0%
+    top: -15%
+
+  100%
+    top: 0
 
 /************************   banner   ************************/ 
 .banner
@@ -248,6 +263,13 @@ header
       line-height: 2rem
       color: $para
       margin: 1rem 0
+
+    .para
+      padding: 1.5rem
+      background-color: $light
+      border-radius: 15px
+      box-shadow: 3px 3px 20px rgba($dark, .05)
+      border-left: 1px solid $main
 
     ul
       margin-bottom: 2rem
@@ -402,6 +424,13 @@ header
       position: relative
       padding: 1rem 0
 
+      &:hover
+        .details
+          top: 90%
+        .image
+          .img
+            transform: scale(1.1)
+
       .image
         height: 300px
         width: 100%
@@ -413,6 +442,7 @@ header
           height: 100%
           width: 100%
           @include image()
+          @include trans()
 
       .details
         position: absolute
@@ -424,6 +454,7 @@ header
         background-color: $light
         box-shadow: 4px 4px 20px rgba($dark, .2)
         border-radius: 8px
+        @include trans()
 
         h3
           font-size: 24px
@@ -510,22 +541,30 @@ header
 
 /************************   footer   ************************/ 
 footer
-  @include image()
   padding: 4rem 0
+  // background: linear-gradient(-130deg, $pri, $main)
+  background: linear-gradient(37.92deg, #00095E 1.2%, #00095E 21.34%, #00042C 52.74%, #000000 100%)
 
   .wrapper
     @include grid($columns: 1fr 1fr)
 
     .logo-sec
-
       .logo
-        font-size: 30px
+        font-size: 20px
         font-weight: 600
         margin-bottom: 2rem
+        color: $light
 
       h3
         margin-bottom: 1rem
         font-size: 24px
+        color: $light
+
+      p
+        line-height: 2rem
+        font-size: 18px
+        margin-bottom: 1rem
+        color: $light
 
       .group
         position: relative
@@ -558,11 +597,641 @@ footer
         ul
           li
             font-size: 18px
-            color: $para
+            color: $light
             line-height: 2rem
+            margin-bottom: 8px
 
             &.heading
-              color: $dark
+              color: $light
               font-size: 24px
               font-weight: 600
               margin-bottom: 1rem
+
+/************************   page-banner   ************************/ 
+.page-banner
+  position: relative
+  height: 400px
+  @include image()
+  @include flex($justify: center)
+  text-align: center
+
+  &::after
+    content: ''
+    @include dark()
+    background-color: rgba($dark, .5)
+    z-index: 1
+
+  .page-title
+    position: relative
+    color: $light
+    z-index: 2
+
+    h1
+      font-size: 50px
+      margin-bottom: 1rem
+      text-transform: uppercase
+
+    h3
+      font-size: 22px
+      font-weight: 400
+      a
+        color: $light
+
+      i
+        margin: 0 1rem
+        font-size: 17px
+
+/************************   our-teams   ************************/ 
+.our-teams
+  .list
+    @include grid($columns: 1fr 1fr 1fr 1fr)
+
+    .item
+      @include flex($justify: center)
+      flex-direction: column
+      text-align: center
+      margin-bottom: 3rem
+
+      .details
+        h3
+          font-size: 22px
+
+        h5
+          font-weight: 400
+          font-size: 18px
+          margin: .5rem 0
+
+        .link-icon
+          @include flex($justify: space-evenly)
+
+          i
+            height: 30px
+            width: 30px
+            border-radius: 50%
+            @include flex($justify: center)
+            background-color: $main
+            color: $light
+            font-size: 12px
+
+      .image
+        height: 180px
+        width: 180px
+        margin-bottom: 1.5rem
+        position: relative
+
+        &::after
+          content: ''
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          height: 210px
+          width: 210px
+          border-radius: 50%
+          border: 2px dashed $main
+
+        .img
+          height: 100%
+          width: 100%
+          border-radius: 50%
+          @include image()
+
+/************************   current-vacancy   ************************/ 
+.current-vacancy
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+
+    .item
+      border-radius: 30px
+      overflow: hidden
+      border: 2px solid $main
+      background-color: $main
+
+      &:hover
+        .image
+          .img
+            transform: scale(1.1)
+
+      .image
+        height: 200px
+        width: 100%
+        border-radius: 30px
+        overflow: hidden
+        position: relative
+        z-index: 2
+
+        .img
+          height: 100%
+          width: 100%
+          @include image()
+          @include trans()
+
+      .details
+        background-color: $light
+        padding: 4rem 1rem 1.2rem
+        border-radius: 30px
+        text-align: left
+        margin-top: -50px
+
+        h3
+          font-size: 24px
+          margin-bottom: 10px
+
+        h5
+          color: $para
+          font-size: 18px
+          font-weight: 500
+
+      button
+        text-align: center
+        font-size: 18px
+        color: $light
+        padding: .7rem
+        width: 100%
+        cursor: pointer
+
+/************************   solutions   ************************/ 
+.solutions
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+
+    .item
+      overflow: hidden
+      position: relative
+      height: 270px
+
+      &:hover
+        &::after
+          height: 100%
+          width: 100%
+          opacity: 1
+          backdrop-filter: blur(5px)
+
+        .image
+          transform: scale(1.2)
+          transition: transform 10s cubic-bezier(0.25, 0.45, 0.45, 0.95)
+
+        .name
+          top: 50%
+          transform: translate(-50%, -50%) scale(1)
+          opacity: 1
+
+      &::after
+        content: ''
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        height: 80%
+        width: 80%
+        background-color: rgba($dark, .4)
+        backdrop-filter: blur(0)
+        z-index: 1
+        opacity: 0
+        @include trans()
+
+      .image
+        height: 100%
+        width: 100%
+        @include image()
+        @include trans()
+
+      .name
+        position: absolute
+        top: 10%
+        left: 50%
+        transform: translate(-50%, -50%) scale(.6)
+        font-size: 24px
+        font-weight: 400
+        letter-spacing: 1px
+        color: $light
+        z-index: 2
+        opacity: 0
+        @include trans()
+        width: 100%
+        text-align: center
+        cursor: pointer
+
+.background
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba($dark, .6)
+  z-index: 15
+  opacity: 0
+  pointer-events: none
+  @include trans()
+  cursor: none
+
+  .cursor-close
+    position: absolute
+    transform: translate(-50%, -50%)
+    pointer-events: none
+    height: 50px
+    width: 50px
+    @include trans()
+
+    img
+      width: 100%
+
+  &.active
+    opacity: 1
+    pointer-events: auto
+
+.solutions-popup
+  position: fixed
+  top: 20%
+  left: 50%
+  transform: translate(-50%, -50%)
+  max-width: 700px
+  width: 100%
+  background-color: $light
+  color: $dark
+  z-index: 15
+  padding: 2rem
+  pointer-events: none
+  @include trans()
+  opacity: 0
+
+  &.active
+    top: 50%
+    opacity: 1
+    pointer-events: auto
+
+  .solutions-close
+    position: absolute
+    right: 0
+    top: -35px
+    height: 30px
+    width: 30px
+    background-color: $light
+    @include flex($justify: center)
+    cursor: pointer
+
+    &:hover
+      img
+        transform: rotate(90deg)
+
+    img
+      width: 70%
+      @include trans()
+
+  .solution-title
+    font-size: 30px
+    font-weight: 500
+    margin-bottom: 1rem
+
+  p
+    font-size: 20px
+    line-height: 2rem
+    color: $dark
+    margin-bottom: 1.5rem
+
+  ul
+    li
+      font-size: 20px
+      line-height: 2rem
+      margin-bottom: 1rem
+      @include flex($justify: flex-start)
+      color: $dark
+      font-weight: 300
+
+      i
+        height: 25px
+        width: 25px
+        font-size: 12px
+        border-radius: 50%
+        @include flex($justify: center)
+        margin-right: 10px
+        background-color: $main
+        color: $light
+
+/************************   contact-page   ************************/ 
+.contact-page
+  .contact-form
+    @include grid($columns: 1fr 2fr)
+
+    .others-info
+      padding: 2rem
+      // background: linear-gradient(30deg, $main, rgba($main, .6))
+      background: linear-gradient(-30deg, $pri, $main, $main, $pri)
+      color: $light
+      border-radius: 6px
+
+      h6
+        position: relative
+        text-transform: uppercase
+        font-size: 15px
+        color: $light
+        display: inline-block
+        margin-bottom: 1rem
+
+        &::after
+          content: ''
+          position: absolute
+          right: -40px
+          top: 50%
+          transform: translateY(-50%)
+          height: 2px
+          width: 30px
+          background-color: $light
+
+      h1
+        font-size: 46px
+        margin-bottom: 2rem
+
+      ul
+        li
+          margin-bottom: 1.3rem
+          @include flex($justify: flex-start)
+
+          i
+            height: 30px
+            width: 30px
+            @include flex($justify: center)
+            border-radius: 50%
+            background-color: $light
+            font-size: 13px
+            color: $main
+            margin-right: 10px
+
+    .form
+      h1
+        font-size: 34px
+        margin-bottom: 2rem
+      h6
+        position: relative
+        text-transform: uppercase
+        font-size: 15px
+        color: $main
+        display: inline-block
+
+        &::after
+          content: ''
+          position: absolute
+          right: -40px
+          top: 50%
+          transform: translateY(-50%)
+          height: 2px
+          width: 30px
+          background-color: $main
+
+      form
+        @include grid($columns: 1fr 1fr)
+
+        .group
+          @include flex($justify: flex-start)
+          align-items: flex-start
+          flex-direction: column
+          // margin-bottom: 1rem
+
+          &:nth-last-child(2)
+            grid-column: 1/3
+
+          label
+            font-size: 18px
+            margin-bottom: 10px
+
+          input, textarea
+            position: relative
+            padding: 1rem
+            width: 100%
+            background-color: rgba($main, .1)
+            border-radius: 4px
+            font-size: 18px
+
+          textarea
+            height: 150px
+
+            &:focus
+              border-left: 2px solid $main
+
+        button
+          @include button($color: $main)
+          display: inline-block
+          font-size: 18px
+          border-radius: 4px
+
+/************************   map   ************************/ 
+.map
+  height: 800px
+  width: 100%
+
+  iframe
+    height: 100%
+    width: 100%
+
+/************************   job-apply   ************************/ 
+.job-apply
+  margin-bottom: 4rem
+  .title-sec
+    position: sticky
+    top: 40px
+    background-color: $light
+    padding-top: 40px
+
+  .job-title
+    font-size: 30px
+    font-weight: 600
+
+    span
+      color: $main
+
+  .sup-title
+    font-size: 13px
+    margin-top: 10px
+    font-weight: 500
+
+  .button
+    @include button($color: $main)
+
+    margin-top: 1rem
+    cursor: pointer
+
+  .line
+    background-color: rgba($dark, 0.15)
+    height: 2px
+    width: 100%
+    margin: 1rem 0
+
+  .job-details-sec
+    margin-top: 1rem
+
+    h4
+      margin-bottom: 1rem
+      font-size: 20px
+
+    h5
+      margin-bottom: 0.4rem
+
+    h6
+      margin-bottom: 1rem
+      font-weight: 500
+
+    ul
+      padding: 0 0 0 2rem
+      margin-bottom: 1rem
+
+      li
+        list-style: disc
+        font-size: 12px
+        line-height: 2rem
+        font-weight: 500
+
+/************************   blog-page   ************************/ 
+.blog-page
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+
+    .item
+      padding: 1rem
+      box-shadow: 3px 3px 30px rgba($dark, .08)
+
+      &:hover
+        .image
+          .img
+            transform: scale(1)
+
+      .image
+        height: 220px
+        width: 100%
+        margin-bottom: 1rem
+        overflow: hidden
+
+        .img
+          transform: scale(1.2)
+          height: 100%
+          width: 100%
+          @include image()
+          @include trans()
+
+      .details
+        padding: .5rem
+
+        .date
+          margin-bottom: 10px
+          @include flex($justify: flex-start)
+          color: $para
+
+          i
+            color: $main
+            margin-right: 10px
+
+        p
+          font-size: 18px
+          line-height: 2rem
+          color: $para
+          margin: 1rem 0
+
+        button
+          @include button($color: $main)
+          font-size: 16px
+          font-weight: 500
+          padding: .5rem 2rem
+
+/************************   blog-details-page   ************************/ 
+.blog-details-page
+
+  .title-blog
+    font-size: 30px
+    font-weight: 600
+    text-align: center
+    color: #110f2e
+    position: relative
+
+  .wrapper
+    @include grid(2fr 1fr)
+    grid-gap: 30px
+
+  .image
+    height: 400px
+    overflow: hidden
+    margin-bottom: 1rem
+
+    .img
+      height: 100%
+      width: 100%
+      @include image()
+
+  .details
+    .name
+      font-size: 40px
+      font-weight: 600
+      line-height: 3rem
+      margin-bottom: 1rem
+
+    .profile
+      @include flex($justify: flex-start)
+      margin: 2rem 0
+
+    .profile-img
+      height: 50px
+      width: 50px
+      border-radius: 50%
+      margin-right: 1rem
+      @include image()
+
+      .profile-detaile
+        color: $dark
+
+        .username
+          font-size: 16px
+          font-weight: 600
+
+        .time
+          font-size: 14px
+
+  .others-infos
+    margin: 2rem 0
+    .name
+      font-size: 26px
+      font-weight: 600
+      margin-bottom: 0.6rem
+
+    .desc
+      margin-bottom: 0.6rem
+      font-size: 17px
+      line-height: 1.8rem
+      color: #535353
+
+    ul
+      margin: 0 0 0 30px
+
+      li
+        list-style: decimal
+        line-height: 2rem
+        margin-bottom: 0.6rem
+
+  .recent-post
+    .list
+      margin-top: 2rem
+      .item
+        @include grid($columns: 1.3fr 3fr)
+        grid-gap: 10px
+        margin-bottom: 2rem
+        box-shadow: 3px 3px 10px rgba($dark, 0.14)
+        transition: 0.3s
+        height: 100%
+
+        &:hover
+          transform: translateY(-5px)
+          box-shadow: 3px 10px 10px rgba($dark, 0.14)
+
+        .recent-image
+          height: 100%
+          width: 100%
+
+          .img
+            width: 100%
+            height: 100%
+            @include image()
+
+        .name
+          font-size: 16px
+          font-weight: 700
+          padding: 1rem 5px
+
+          a
+            color: $dark
