@@ -145,7 +145,7 @@ section
 
 header
   z-index: 20
-  background-color: $main
+  background-color: $light
   @include trans()
 
   .side-nav-btn
@@ -179,19 +179,19 @@ header
           padding: 1rem
           border-radius: 10px
           @include flex($justify: flex-start)
-          color: $light
+          color: $dark
 
           &:hover
-            background-color: rgba($light, .1)
+            background-color: rgba($main, .1)
 
           i
             font-size: 14px
-            color: $light
+            color: $dark
             margin-right: 7px
 
           &.login
             margin-left: 2rem
-            color: $light
+            color: $dark
             font-weight: 600
             font-size: 18px
             @include flex($justify: flex-start)
@@ -203,7 +203,7 @@ header
           &.drop-down
             position: relative
             @include flex($justify: flex-start)
-            color: $light
+            color: $dark
             cursor: pointer
 
             .icon
@@ -228,7 +228,7 @@ header
               top: 100px
               transform: translateX(-50%) scale(.9)
               padding: 1rem
-              background-color: $main
+              background-color: $light
               box-shadow: 0 2px 15px rgba($dark,.3)
               border-radius: 10px
               width: 180px
@@ -239,7 +239,7 @@ header
 
               li
                 font-size: 18px
-                color: $light
+                color: $dark
                 line-height: 1.5rem
                 margin: 0
 
