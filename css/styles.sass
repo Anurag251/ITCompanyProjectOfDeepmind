@@ -11,8 +11,10 @@
   list-style: none
   font-family: 'Manrope', sans-serif
 
-$main: #954088
-$pri: #314056
+// $main: #954088
+// $pri: #314056
+$main: #2e3192
+$pri: #6dcff6
 $sec: #06E3F5
 $para: #666666
 $bg: #F1F8FB
@@ -22,7 +24,7 @@ $light: #ffffff
 body
   background-color: $light
   overflow-x: hidden
-  --swiper-theme-color: #954088
+  --swiper-theme-color: #2e3192
 
 @mixin trans()
   transition: 0.45s cubic-bezier(0, 0, 0, 1),
@@ -51,15 +53,15 @@ body
 
 @mixin button($color)
   padding: .7rem 2rem
-  background-color: $color
+  background-color: $light
   color: $light
   border: 1px solid $color
   cursor: pointer
-  box-shadow: 0 0 0 0em $light inset
+  box-shadow: 0 0 0 3em $color inset
   @include trans()
 
   &:hover
-    box-shadow: 0 0 0 3em $light inset
+    box-shadow: 0 0 0 0em $color inset
     color: $color
 
 section
@@ -103,7 +105,7 @@ section
   h6
     position: relative
     text-transform: uppercase
-    font-size: 15px
+    font-size: 24px
     color: $main
     display: inline-block
 
@@ -138,11 +140,16 @@ section
     font-size: 18px
 
 /************************   header   ************************/ 
+.side-nav
+  display: none
 
 header
   z-index: 20
-  background-color: $pri
+  background-color: $main
   @include trans()
+
+  .side-nav-btn
+    display: none
 
   &.sticky
     position: sticky
@@ -154,20 +161,87 @@ header
     padding: .5rem 0
 
     .logo
-      font-size: 30px
-      font-weight: 600
-      color: $light
+      height: 70px
+      width: 200px
+      background-color: $light
+      @include flex($justify: center)
+      border-radius: 15px
+
+      img
+        width: 80%
 
     .nav
-      ul
+      .nav-menu
         @include flex($justify: flex-end)
 
         li
           margin-left: 1rem
           padding: 1rem
+          border-radius: 10px
+          @include flex($justify: flex-start)
+          color: $light
 
-          a
+          &:hover
+            background-color: rgba($light, .1)
+
+          i
+            font-size: 14px
             color: $light
+            margin-right: 7px
+
+          &.login
+            margin-left: 2rem
+            color: $light
+            font-weight: 600
+            font-size: 18px
+            @include flex($justify: flex-start)
+
+            i
+              margin-right: 7px
+              font-size: 14px
+
+          &.drop-down
+            position: relative
+            @include flex($justify: flex-start)
+            color: $light
+            cursor: pointer
+
+            .icon
+              height: 15px
+              width: 15px
+              margin-right: 7px
+              @include flex($justify: center)
+
+              img
+                width: 100%
+
+            &:hover
+              .drop
+                top: 54px
+                opacity: 1
+                pointer-events: auto
+                transform: translateX(-50%) scale(1)
+
+            .drop
+              position: absolute
+              left: 50%
+              top: 100px
+              transform: translateX(-50%) scale(.9)
+              padding: 1rem
+              background-color: $main
+              box-shadow: 0 2px 15px rgba($dark,.3)
+              border-radius: 10px
+              width: 180px
+              z-index: 10
+              pointer-events: none
+              opacity: 0
+              @include trans()
+
+              li
+                font-size: 18px
+                color: $light
+                line-height: 1.5rem
+                margin: 0
 
 @keyframes sticky
   0%
@@ -193,7 +267,7 @@ header
       opacity: 1
 
   .swiper-slide
-    height: 70vh
+    height: 400px
     background: linear-gradient(37.92deg, #00095E 1.2%, #00095E 21.34%, #00042C 52.74%, #000000 100%)
 
     .image
@@ -238,7 +312,7 @@ header
     h6
       position: relative
       text-transform: uppercase
-      font-size: 15px
+      font-size: 24px
       color: $main
       display: inline-block
 
@@ -278,9 +352,10 @@ header
         line-height: 2.6rem
         font-size: 18px
         @include flex($justify: flex-start)
+        @include grid($columns: 10px 1fr)
 
         i
-          font-size: 9px
+          font-size: 10px
           margin-right: 10px
           height: 20px
           width: 20px
@@ -395,7 +470,7 @@ header
 
 /************************   our-recent-project   ************************/ 
 .our-recent-project
-  height: 500px
+  height: 350px
   position: relative
   padding: 4rem 0
   margin-bottom: 18rem
@@ -426,7 +501,7 @@ header
 
       &:hover
         .details
-          top: 90%
+          top: 97%
         .image
           .img
             transform: scale(1.1)
@@ -542,7 +617,6 @@ header
 /************************   footer   ************************/ 
 footer
   padding: 4rem 0
-  // background: linear-gradient(-130deg, $pri, $main)
   background: linear-gradient(37.92deg, #00095E 1.2%, #00095E 21.34%, #00042C 52.74%, #000000 100%)
 
   .wrapper
@@ -550,14 +624,20 @@ footer
 
     .logo-sec
       .logo
-        font-size: 20px
-        font-weight: 600
+        height: 70px
+        width: 200px
+        background-color: $light
+        @include flex($justify: center)
+        border-radius: 15px
         margin-bottom: 2rem
-        color: $light
+
+        img
+          width: 80%
 
       h3
         margin-bottom: 1rem
-        font-size: 24px
+        font-size: 26px
+        text-transform: uppercase
         color: $light
 
       p
@@ -603,17 +683,17 @@ footer
 
             &.heading
               color: $light
-              font-size: 24px
+              font-size: 28px
+              text-transform: uppercase
               font-weight: 600
               margin-bottom: 1rem
 
 /************************   page-banner   ************************/ 
 .page-banner
   position: relative
-  height: 400px
+  padding: 4rem 0
   @include image()
   @include flex($justify: center)
-  text-align: center
 
   &::after
     content: ''
@@ -625,11 +705,16 @@ footer
     position: relative
     color: $light
     z-index: 2
+    text-align: left
+    @include grid($columns: 1fr 1fr)
 
     h1
       font-size: 50px
-      margin-bottom: 1rem
       text-transform: uppercase
+
+    p
+      font-size: 18px
+      line-height: 2rem
 
     h3
       font-size: 22px
@@ -812,6 +897,7 @@ footer
         text-align: center
         cursor: pointer
 
+/************************   background   ************************/ 
 .background
   position: fixed
   top: 0
@@ -840,6 +926,7 @@ footer
     opacity: 1
     pointer-events: auto
 
+/************************   solutions-popup   ************************/ 
 .solutions-popup
   position: fixed
   top: 20%
@@ -849,7 +936,7 @@ footer
   width: 100%
   background-color: $light
   color: $dark
-  z-index: 15
+  z-index: 20
   padding: 2rem
   pointer-events: none
   @include trans()
@@ -878,6 +965,10 @@ footer
       width: 70%
       @include trans()
 
+  .solution-details
+    max-height: 400px
+    overflow-y: auto
+
   .solution-title
     font-size: 30px
     font-weight: 500
@@ -891,17 +982,18 @@ footer
 
   ul
     li
-      font-size: 20px
-      line-height: 2rem
+      font-size: 18px
+      line-height: 1.5rem
       margin-bottom: 1rem
       @include flex($justify: flex-start)
+      @include grid($columns: 10px 1fr)
       color: $dark
       font-weight: 300
 
       i
-        height: 25px
-        width: 25px
-        font-size: 12px
+        height: 20px
+        width: 20px
+        font-size: 9px
         border-radius: 50%
         @include flex($justify: center)
         margin-right: 10px
@@ -911,12 +1003,12 @@ footer
 /************************   contact-page   ************************/ 
 .contact-page
   .contact-form
-    @include grid($columns: 1fr 2fr)
+    @include grid($columns: 2fr 1fr)
 
     .others-info
       padding: 2rem
       // background: linear-gradient(30deg, $main, rgba($main, .6))
-      background: linear-gradient(-30deg, $pri, $main, $main, $pri)
+      background: linear-gradient(30deg, $main, $pri)
       color: $light
       border-radius: 6px
 
@@ -1016,7 +1108,7 @@ footer
 
 /************************   map   ************************/ 
 .map
-  height: 800px
+  height: 600px
   width: 100%
 
   iframe
@@ -1133,7 +1225,6 @@ footer
 
 /************************   blog-details-page   ************************/ 
 .blog-details-page
-
   .title-blog
     font-size: 30px
     font-weight: 600
@@ -1235,3 +1326,84 @@ footer
 
           a
             color: $dark
+
+/************************   login   ************************/ 
+.login-page
+  height: 100vh
+  @include image()
+  @include flex($justify: center)
+
+  form
+    width: 100%
+
+  .login-form
+    max-width: 400px
+    width: 100%
+    padding: 2rem
+    margin: auto
+    background-color: rgba($dark, .6)
+    backdrop-filter: blur(7px)
+    @include flex($justify: center)
+    flex-direction: column
+    border-radius: 15px
+    position: relative
+    color: $light
+
+    .back
+      position: absolute
+      left: 10px
+      top: 10px
+      height: 30px
+      width: 30px
+      border-radius: 50%
+      background-color: $light
+      color: $dark
+      @include flex($justify: center)
+      cursor: pointer
+
+      i
+        font-size: 16px
+
+    .logo
+      height: 70px
+      width: 230px
+      background-color: $light
+      @include flex($justify: center)
+      border-radius: 15px
+      margin-bottom: 1rem
+
+      img
+        width: 100%
+
+    .title
+      font-size: 30px
+      font-weight: 700
+      text-transform: uppercase
+      color: $light
+
+    .group
+      @include flex($justify: flex-start)
+      align-items: flex-start
+      flex-direction: column
+      width: 100%
+      margin-bottom: 2rem
+
+      label
+        font-size: 16px
+        margin-bottom: 6px
+
+      input
+        padding: 1rem
+        background-color: $light
+        width: 100%
+        border-radius: 15px
+
+        &:focus
+          border-left: 2px solid $pri
+
+    button
+      @include button($color: $pri)
+      font-size: 18px
+      background: none
+      border-radius: 10px
+      color: $dark

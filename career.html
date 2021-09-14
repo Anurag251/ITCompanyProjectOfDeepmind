@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- responsive -->
+    <link rel="stylesheet" href="./css/responsive.css" />
     <!-- swiper -->
     <link rel="stylesheet" href="./css/swiper.min.css" />
     <!-- fontawesome -->
@@ -21,33 +23,111 @@
     <header>
       <div class="wrapper">
         <div class="navbar">
-          <div class="logo">LOGO</div>
+          <a href="index.html">
+            <div class="logo">
+              <img src="./images/icon/logo2.png" alt="" />
+            </div>
+          </a>
           <div class="nav">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="career.html">Career</a></li>
-              <li><a href="solutions.html">Solutions</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+            <ul class="nav-menu">
+              <a href="index.html">
+                <li><i class="fas fa-home"></i> Home</li>
+              </a>
+              <li class="drop-down">
+                <div class="icon">
+                  <img src="./images/icon/menu.svg" alt="" />
+                </div>
+                Company
+                <ul class="drop">
+                  <a href="about.html">
+                    <li>About</li>
+                  </a>
+                  <a href="career.html">
+                    <li>Careers</li>
+                  </a>
+                  <a href="solutions.html">
+                    <li>Offerings</li>
+                  </a>
+                  <a href="blog.html">
+                    <li>Blog</li>
+                  </a>
+                  <a href="contact.html">
+                    <li>Contact</li>
+                  </a>
+                </ul>
+              </li>
+
+              <li class="drop-down">
+                <div class="icon">
+                  <img src="./images/icon/menu.svg" alt="" />
+                </div>
+                Product
+
+                <ul class="drop">
+                  <a href="#">
+                    <li>Dolphwin</li>
+                  </a>
+                </ul>
+              </li>
+
+              <a href="login.html">
+                <li class="login"><i class="fas fa-user"></i> Login</li>
+              </a>
             </ul>
+          </div>
+          <div class="side-nav-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
           </div>
         </div>
       </div>
     </header>
     <!-- header-end -->
 
+    <div class="background">
+      <img class="cursor-close" src="./images/icon/shadow-close.svg" alt="" />
+    </div>
+
+    <!-- side-nav-start -->
+    <div class="side-nav">
+      <div class="logo-sec">
+        <div class="logo">
+          <img src="./images/icon/logo2.png" alt="" />
+        </div>
+        <div class="nav-close">
+          <img src="./images/icon/close_big.svg" alt="" />
+        </div>
+      </div>
+
+      <ul>
+        <a href="index.html"><li>Home</li></a>
+        <a href="about.html"><li>About</li></a>
+        <a href="career.html"><li>Careers</li></a>
+        <a href="solutions.html"><li>Offerings</li></a>
+        <a href="blog.html"><li>Blog</li></a>
+        <a href="contact.html"><li>Contact</li></a>
+        <a href="#"><li>Dolphwin</li></a>
+        <a href="login.html"><li>Login</li></a>
+      </ul>
+    </div>
+    <!-- side-nav-end -->
+
     <!-- page-banner-start -->
     <div
       class="page-banner"
       style="background-image: url(./images/pagebanner.jpg)"
     >
-      <div class="page-title">
-        <h1>Career</h1>
-        <h3>
-          <a href="index.html">Home</a>
-          <i class="fas fa-chevron-right"></i> Career
-        </h3>
+      <div class="wrapper">
+        <div class="page-title">
+          <h1>Careers</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+            laudantium dolorem repudiandae aliquam? Soluta ipsa repellat illum
+            animi. Error at velit veniam voluptatum et eaque molestiae officia,
+            illo vel necessitatibus?
+          </p>
+        </div>
       </div>
     </div>
     <!-- page-banner-end -->
@@ -57,13 +137,7 @@
       <div class="wrapper">
         <div class="current-vacancy">
           <div class="title">
-            <h6>vacancy</h6>
-            <h1>Current vacancy</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              distinctio exercitationem quae maxime quod sed temporibus
-              accusantium
-            </p>
+            <h6>Careers</h6>
           </div>
 
           <div class="list">
@@ -168,7 +242,7 @@
         <div class="logo-sec">
           <a href="index.html">
             <div class="logo">
-              <h1>LOGO</h1>
+              <img src="./images/icon/logo2.png" alt="" />
             </div>
           </a>
 
@@ -191,22 +265,25 @@
               <a href="about.html">
                 <li>About Us</li>
               </a>
+
               <a href="contact.html">
                 <li>Support</li>
               </a>
+
               <a href="career.html">
                 <li>Career</li>
               </a>
-              <a href="#">
-                <li>Responsibility</li>
-              </a>
 
-              <a href="#">
-                <li>Reports</li>
+              <a href="blog.html">
+                <li>Blogs</li>
               </a>
 
               <a href="solutions.html">
-                <li>Solutuins</li>
+                <li>Offerings</li>
+              </a>
+
+              <a href="login.html">
+                <li>Login</li>
               </a>
             </ul>
           </div>

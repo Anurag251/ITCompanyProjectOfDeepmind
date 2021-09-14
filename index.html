@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- responsive -->
+    <link rel="stylesheet" href="./css/responsive.css" />
     <!-- swiper -->
     <link rel="stylesheet" href="./css/swiper.min.css" />
     <!-- fontawesome -->
@@ -21,21 +23,95 @@
     <header>
       <div class="wrapper">
         <div class="navbar">
-          <div class="logo">LOGO</div>
+          <a href="index.html">
+            <div class="logo">
+              <img src="./images/icon/logo2.png" alt="" />
+            </div>
+          </a>
           <div class="nav">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="career.html">Career</a></li>
-              <li><a href="solutions.html">Solutions</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+            <ul class="nav-menu">
+              <a href="index.html">
+                <li><i class="fas fa-home"></i> Home</li>
+              </a>
+              <li class="drop-down">
+                <div class="icon">
+                  <img src="./images/icon/menu.svg" alt="" />
+                </div>
+                Company
+                <ul class="drop">
+                  <a href="about.html">
+                    <li>About</li>
+                  </a>
+                  <a href="career.html">
+                    <li>Careers</li>
+                  </a>
+                  <a href="solutions.html">
+                    <li>Offerings</li>
+                  </a>
+                  <a href="blog.html">
+                    <li>Blog</li>
+                  </a>
+                  <a href="contact.html">
+                    <li>Contact</li>
+                  </a>
+                </ul>
+              </li>
+
+              <li class="drop-down">
+                <div class="icon">
+                  <img src="./images/icon/menu.svg" alt="" />
+                </div>
+                Product
+
+                <ul class="drop">
+                  <a href="#">
+                    <li>Dolphwin</li>
+                  </a>
+                </ul>
+              </li>
+
+              <a href="login.html">
+                <li class="login"><i class="fas fa-user"></i> Login</li>
+              </a>
             </ul>
+          </div>
+          <div class="side-nav-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
           </div>
         </div>
       </div>
     </header>
     <!-- header-end -->
+
+    <div class="background">
+      <img class="cursor-close" src="./images/icon/shadow-close.svg" alt="" />
+    </div>
+
+    <!-- side-nav-start -->
+    <div class="side-nav">
+      <div class="logo-sec">
+        <div class="logo">
+          <img src="./images/icon/logo2.png" alt="" />
+        </div>
+        <div class="nav-close">
+          <img src="./images/icon/close_big.svg" alt="" />
+        </div>
+      </div>
+
+      <ul>
+        <a href="index.html"><li>Home</li></a>
+        <a href="about.html"><li>About</li></a>
+        <a href="career.html"><li>Careers</li></a>
+        <a href="solutions.html"><li>Offerings</li></a>
+        <a href="blog.html"><li>Blog</li></a>
+        <a href="contact.html"><li>Contact</li></a>
+        <a href="#"><li>Dolphwin</li></a>
+        <a href="login.html"><li>Login</li></a>
+      </ul>
+    </div>
+    <!-- side-nav-end -->
 
     <!-- banner-start -->
     <div class="banner">
@@ -98,11 +174,7 @@
             style="background-image: url(./images/about.png)"
           ></div>
           <div class="details">
-            <h6>Who We Are</h6>
-            <h1>
-              About our <span>Machine Learning</span> <br />
-              software firm.
-            </h1>
+            <h6>Mission</h6>
 
             <p>
               Replacing a maintains the amount of lines. When replacing a
@@ -145,12 +217,7 @@
       <div class="wrapper">
         <div class="services">
           <div class="title">
-            <h6>Services</h6>
-            <h1>Our Services</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-              recusandae beatae, fugiat est quisquam eos perferendis esse eum ad
-            </p>
+            <h6>Our Offerings</h6>
           </div>
 
           <div class="list">
@@ -168,7 +235,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="name">Web Design</h3>
+                <h3 class="name">Web Designing</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, iste
@@ -190,7 +257,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="name">Web Design</h3>
+                <h3 class="name">Web Developing</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, iste
@@ -212,7 +279,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="name">Web Design</h3>
+                <h3 class="name">App Developing</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, iste
@@ -234,7 +301,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="name">Web Design</h3>
+                <h3 class="name">Creative Service</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, iste
@@ -252,7 +319,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="name">Web Design</h3>
+                <h3 class="name">Smart Service</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, iste
@@ -270,7 +337,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="name">Web Design</h3>
+                <h3 class="name">Motion Design</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, iste
@@ -289,7 +356,6 @@
         <div class="work">
           <div class="details">
             <h6>How We Work</h6>
-            <h1>We Can Take Your Business To The <span>Next Level.</span></h1>
 
             <p>
               It is a long established fact that a reader will be distracted by
@@ -336,11 +402,6 @@
         <div class="our-recent-project">
           <div class="title light">
             <h6>PROJECTS</h6>
-            <h1>Our Recent Launched Projects Available into Market</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-              recusandae beatae, fugiat est quisquam eos perferendis esse eum ad
-            </p>
           </div>
           <div class="list">
             <div class="swiper mySwiper">
@@ -453,11 +514,6 @@
         <div class="customer-says">
           <div class="title">
             <h6>TESTIMONIAL</h6>
-            <h1>What Saying Our Customers</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-              recusandae beatae, fugiat est quisquam eos perferendis esse eum ad
-            </p>
           </div>
 
           <div class="swiper mySwiper">
@@ -597,7 +653,7 @@
                     </p>
                     <div
                       class="profile"
-                      style="background-image: url(./images/profile6.jpeg)"
+                      style="background-image: url(./images/team1.jpg)"
                     ></div>
                   </div>
 
@@ -666,7 +722,7 @@
         <div class="logo-sec">
           <a href="index.html">
             <div class="logo">
-              <h1>LOGO</h1>
+              <img src="./images/icon/logo2.png" alt="" />
             </div>
           </a>
 
@@ -689,22 +745,25 @@
               <a href="about.html">
                 <li>About Us</li>
               </a>
+
               <a href="contact.html">
                 <li>Support</li>
               </a>
+
               <a href="career.html">
                 <li>Career</li>
               </a>
-              <a href="#">
-                <li>Responsibility</li>
-              </a>
 
-              <a href="#">
-                <li>Reports</li>
+              <a href="blog.html">
+                <li>Blogs</li>
               </a>
 
               <a href="solutions.html">
-                <li>Solutuins</li>
+                <li>Offerings</li>
+              </a>
+
+              <a href="login.html">
+                <li>Login</li>
               </a>
             </ul>
           </div>

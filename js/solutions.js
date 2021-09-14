@@ -1,8 +1,6 @@
 const solutionsPop = document.querySelector('.solutions-popup');
 const solutionsClose = document.querySelector('.solutions-close');
 const solutionBtn = document.querySelectorAll('.solutionBtn');
-const background = document.querySelector('.background');
-const mouse = document.querySelector('.cursor-close');
 
 solutionBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
