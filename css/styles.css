@@ -1004,19 +1004,10 @@ footer .wrapper .list .item ul li.heading {
 /************************   page-banner   ************************/
 .page-banner {
   position: relative;
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .page-banner::after {
@@ -1035,16 +1026,11 @@ footer .wrapper .list .item ul li.heading {
   color: #ffffff;
   z-index: 2;
   text-align: left;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
 }
 
 .page-banner .page-title h1 {
-  font-size: 50px;
-  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 500;
 }
 
 .page-banner .page-title p {
@@ -1958,6 +1944,7 @@ footer .wrapper .list .item ul li.heading {
 .blog-details-page .recent-post .list .item .recent-image {
   height: 100%;
   width: 100%;
+  min-height: 80px;
 }
 
 .blog-details-page .recent-post .list .item .recent-image .img {
