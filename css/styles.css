@@ -1534,7 +1534,8 @@ footer .wrapper .list .item ul li.heading {
 .contact-page .contact-form .form h6 {
   position: relative;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 24px;
+  margin-bottom: 2rem;
   color: #2e3192;
   display: inline-block;
 }
